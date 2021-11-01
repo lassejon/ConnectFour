@@ -20,9 +20,13 @@ namespace App.Controller
             var piece = Rows[posX, posY];
             var countAdjacentPieces = 0;
             
+            // Green side of matrix
             var x = 0;
             var y = Math.Abs(posY - posX);
+            
+            // Red side of diagonal
             if (posX > posY) (x, y) = (y, x);
+            
             while (y < Size && x < Size)
             {
                 if (string.Equals(piece, Rows[x, y]))
@@ -44,8 +48,11 @@ namespace App.Controller
             var piece = Rows[posX, posY];
             var countAdjacentPieces = 0;
 
+            // Green side of matrix
             var x = posX + posY;
             var y = 0;
+            
+            // Red side of matrix
             if (x > 8)
             {
                 x = Size - 1;
